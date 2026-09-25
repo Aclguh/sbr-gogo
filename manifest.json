@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "SBR GoGo Auto Runner",
+  "version": "1.1.0",
+  "description": "『GO!GO! HORSE RUN!』自动驾驶：自动交替踏步把速度稳定保持在最大值附近（不触发 SLIP），并自动拍碎仙人掌、驱赶对手、收集小熊（+5s / BEYOND）。",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://sbr-gogo.jojo-portal-anime.com/game/*"],
+      "js": ["hook.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://sbr-gogo.jojo-portal-anime.com/game/*"],
+      "js": ["auto.js"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    }
+  ]
+}
